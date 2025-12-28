@@ -1,0 +1,388 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* CivicAlert Design System - Light Theme */
+    --background: 210 20% 98%;
+    --foreground: 222 47% 11%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    
+    /* Deep Navy Primary - Authority & Trust */
+    --primary: 222 47% 20%;
+    --primary-foreground: 210 40% 98%;
+    
+    /* Soft Slate Secondary */
+    --secondary: 215 25% 94%;
+    --secondary-foreground: 222 47% 20%;
+    
+    --muted: 215 20% 94%;
+    --muted-foreground: 215 16% 47%;
+    
+    /* Subtle Blue Accent */
+    --accent: 217 91% 60%;
+    --accent-foreground: 0 0% 100%;
+    
+    /* Alert Colors */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+    
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    
+    --info: 199 89% 48%;
+    --info-foreground: 0 0% 100%;
+    
+    /* Severity Colors */
+    --severity-low: 142 76% 36%;
+    --severity-medium: 38 92% 50%;
+    --severity-high: 0 84% 60%;
+    --severity-critical: 0 72% 51%;
+    
+    /* Status Colors */
+    --status-unverified: 215 16% 47%;
+    --status-verified: 217 91% 60%;
+    --status-in-progress: 38 92% 50%;
+    --status-resolved: 142 76% 36%;
+    
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 222 47% 20%;
+    
+    --radius: 0.625rem;
+    
+    /* Sidebar */
+    --sidebar-background: 222 47% 11%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 222 47% 18%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 222 47% 20%;
+    --sidebar-ring: 217 91% 60%;
+    
+    /* Custom Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(222 47% 20%) 0%, hsl(217 91% 35%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(199 89% 48%) 100%);
+    --gradient-warning: linear-gradient(135deg, hsl(38 92% 50%) 0%, hsl(25 95% 53%) 100%);
+    --gradient-danger: linear-gradient(135deg, hsl(0 84% 60%) 0%, hsl(0 72% 51%) 100%);
+    --gradient-success: linear-gradient(135deg, hsl(142 76% 36%) 0%, hsl(160 84% 39%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(210 20% 98%) 100%);
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(222 47% 11% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(222 47% 11% / 0.1), 0 2px 4px -2px hsl(222 47% 11% / 0.1);
+    --shadow-lg: 0 10px 15px -3px hsl(222 47% 11% / 0.1), 0 4px 6px -4px hsl(222 47% 11% / 0.1);
+    --shadow-glow: 0 0 20px hsl(217 91% 60% / 0.3);
+  }
+
+  .dark {
+    /* CivicAlert Design System - Dark Theme */
+    --background: 222 47% 7%;
+    --foreground: 210 40% 98%;
+    
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 98%;
+    
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+    
+    --primary: 217 91% 60%;
+    --primary-foreground: 222 47% 11%;
+    
+    --secondary: 222 47% 18%;
+    --secondary-foreground: 210 40% 98%;
+    
+    --muted: 222 47% 15%;
+    --muted-foreground: 215 20% 65%;
+    
+    --accent: 217 91% 60%;
+    --accent-foreground: 0 0% 100%;
+    
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --success: 142 70% 45%;
+    --success-foreground: 0 0% 100%;
+    
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    
+    --info: 199 89% 48%;
+    --info-foreground: 0 0% 100%;
+    
+    --severity-low: 142 70% 45%;
+    --severity-medium: 38 92% 50%;
+    --severity-high: 0 62% 50%;
+    --severity-critical: 0 72% 45%;
+    
+    --status-unverified: 215 20% 55%;
+    --status-verified: 217 91% 60%;
+    --status-in-progress: 38 92% 50%;
+    --status-resolved: 142 70% 45%;
+    
+    --border: 222 47% 20%;
+    --input: 222 47% 20%;
+    --ring: 217 91% 60%;
+    
+    --sidebar-background: 222 47% 5%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 222 47% 12%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 222 47% 15%;
+    --sidebar-ring: 217 91% 60%;
+    
+    --gradient-primary: linear-gradient(135deg, hsl(217 91% 50%) 0%, hsl(199 89% 48%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(222 47% 11%) 0%, hsl(222 47% 9%) 100%);
+    
+    --shadow-sm: 0 1px 2px 0 hsl(0 0% 0% / 0.3);
+    --shadow-md: 0 4px 6px -1px hsl(0 0% 0% / 0.4), 0 2px 4px -2px hsl(0 0% 0% / 0.3);
+    --shadow-lg: 0 10px 15px -3px hsl(0 0% 0% / 0.4), 0 4px 6px -4px hsl(0 0% 0% / 0.3);
+    --shadow-glow: 0 0 30px hsl(217 91% 60% / 0.2);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+}
+
+@layer components {
+  /* Card Variants */
+  .card-elevated {
+    @apply bg-card rounded-xl border shadow-md transition-all duration-200;
+    background: var(--gradient-card);
+  }
+  
+  .card-elevated:hover {
+    @apply shadow-lg;
+    transform: translateY(-2px);
+  }
+  
+  .card-glass {
+    @apply bg-card/80 backdrop-blur-md rounded-xl border;
+  }
+  
+  /* Severity Badges */
+  .badge-severity-low {
+    @apply px-2.5 py-0.5 rounded-full text-xs font-medium;
+    background: hsl(var(--severity-low) / 0.15);
+    color: hsl(var(--severity-low));
+  }
+  
+  .badge-severity-medium {
+    @apply px-2.5 py-0.5 rounded-full text-xs font-medium;
+    background: hsl(var(--severity-medium) / 0.15);
+    color: hsl(var(--severity-medium));
+  }
+  
+  .badge-severity-high {
+    @apply px-2.5 py-0.5 rounded-full text-xs font-medium;
+    background: hsl(var(--severity-high) / 0.15);
+    color: hsl(var(--severity-high));
+  }
+  
+  .badge-severity-critical {
+    @apply px-2.5 py-0.5 rounded-full text-xs font-medium animate-pulse;
+    background: hsl(var(--severity-critical) / 0.2);
+    color: hsl(var(--severity-critical));
+  }
+  
+  /* Status Badges */
+  .badge-status-unverified {
+    @apply px-2.5 py-0.5 rounded-full text-xs font-medium;
+    background: hsl(var(--status-unverified) / 0.15);
+    color: hsl(var(--status-unverified));
+  }
+  
+  .badge-status-verified {
+    @apply px-2.5 py-0.5 rounded-full text-xs font-medium;
+    background: hsl(var(--status-verified) / 0.15);
+    color: hsl(var(--status-verified));
+  }
+  
+  .badge-status-in-progress {
+    @apply px-2.5 py-0.5 rounded-full text-xs font-medium;
+    background: hsl(var(--status-in-progress) / 0.15);
+    color: hsl(var(--status-in-progress));
+  }
+  
+  .badge-status-resolved {
+    @apply px-2.5 py-0.5 rounded-full text-xs font-medium;
+    background: hsl(var(--status-resolved) / 0.15);
+    color: hsl(var(--status-resolved));
+  }
+  
+  /* Stat Cards */
+  .stat-card {
+    @apply relative overflow-hidden rounded-xl border p-6 transition-all duration-300;
+    background: var(--gradient-card);
+  }
+  
+  .stat-card::before {
+    content: '';
+    @apply absolute inset-0 opacity-0 transition-opacity duration-300;
+    background: var(--gradient-accent);
+  }
+  
+  .stat-card:hover::before {
+    @apply opacity-5;
+  }
+  
+  /* Sidebar Active State */
+  .sidebar-link-active {
+    @apply bg-sidebar-accent text-sidebar-accent-foreground;
+  }
+  
+  /* Pulse Animation for Live Indicators */
+  .pulse-live {
+    @apply relative;
+  }
+  
+  .pulse-live::before {
+    content: '';
+    @apply absolute -left-2 top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-success;
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+  
+  /* Table Styles */
+  .table-row-hover {
+    @apply transition-colors duration-150 hover:bg-muted/50;
+  }
+  
+  /* Scrollbar Styling */
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--muted)) transparent;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted-foreground) / 0.3);
+    border-radius: 3px;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground) / 0.5);
+  }
+}
+
+@layer utilities {
+  /* Animation Utilities */
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-out forwards;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.4s ease-out forwards;
+  }
+  
+  .animate-slide-in-right {
+    animation: slideInRight 0.3s ease-out forwards;
+  }
+  
+  .animate-scale-in {
+    animation: scaleIn 0.2s ease-out forwards;
+  }
+  
+  /* Gradient Text */
+  .text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .text-gradient-accent {
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 1;
+    box-shadow: 0 0 0 0 hsl(var(--success) / 0.7);
+  }
+  50% {
+    opacity: 0.8;
+    box-shadow: 0 0 0 6px hsl(var(--success) / 0);
+  }
+}
